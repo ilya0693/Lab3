@@ -21,8 +21,8 @@ if __name__ == '__main__':
     # Найти сумму членов ряда.
     while math.fabs(a) > EPS:
         a *= x * k / (k + 1) ** 2
-    S += a
-    k += 1
+        S += a
+        k += 1
 
     # Вывести значение функции.
     print(f"Ei({x}) = {EULER + math.log(math.fabs(x)) + S}")
