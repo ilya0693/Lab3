@@ -25,8 +25,13 @@ if __name__ == '__main__':
         print("Корней нет")
         exit(1)
     elif D == 0:
-        y = -b / (2 * a)
+        y = math.fabs(-b / (2 * a))
         print(f"y = {y}")
+        print("3. Решим уравнение x")
+        x1 = math.sqrt(y)
+        x2 = - math.sqrt(y)
+        print(f"x1 = {x1}\nx2 = {x2}")
+        exit(1)
     else:
         y1 = (-b + math.sqrt(D)) / (2 * a)
         y2 = (-b - math.sqrt(D)) / (2 * a)
