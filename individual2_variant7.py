@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
+import cmath
 import sys
 
 
@@ -22,19 +22,22 @@ if __name__ == '__main__':
 
     print("2. Найдем корни y")
     if D < 0:
-        print("Корней нет")
+        y1 = (-b + cmath.sqrt(D)) / (2 * a)
+        y2 = (-b - cmath.sqrt(D)) / (2 * a)
+        print(f"y1 = {y1}")
+        print(f"y2 = {y2}")
         exit(1)
     elif D == 0:
-        y = math.fabs(-b / (2 * a))
+        y = cmath.fabs(-b / (2 * a))
         print(f"y = {y}")
         print("3. Решим уравнение x")
-        x1 = math.sqrt(y)
-        x2 = - math.sqrt(y)
+        x1 = cmath.sqrt(y)
+        x2 = - cmath.sqrt(y)
         print(f"x1 = {x1}\nx2 = {x2}")
         exit(1)
     else:
-        y1 = (-b + math.sqrt(D)) / (2 * a)
-        y2 = (-b - math.sqrt(D)) / (2 * a)
+        y1 = (-b + cmath.sqrt(D)) / (2 * a)
+        y2 = (-b - cmath.sqrt(D)) / (2 * a)
         print(f"y1 = {y1}")
         print(f"y2 = {y2}")
 
@@ -42,9 +45,9 @@ if __name__ == '__main__':
     z1 = y1
     z2 = y2
 
-    x1 = math.sqrt(z1)
-    x2 = - math.sqrt(z1)
-    x3 = math.sqrt(z2)
-    x4 = - math.sqrt(z2)
+    x1 = cmath.sqrt(z1)
+    x2 = - cmath.sqrt(z1)
+    x3 = cmath.sqrt(z2)
+    x4 = - cmath.sqrt(z2)
 
 print(f"x1 = {x1}\nx2 = {x2}\nx3 = {x3}\nx4 = {x4}")

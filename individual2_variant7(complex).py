@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
 import cmath
 import sys
 
 
 if __name__ == '__main__':
     print('Решим биквадратное уравнение a*x**4 + b*x**2 + c = 0')
-    a = complex(input("Value of a? "))
-    b = complex(input("Value of b? "))
-    c = complex(input("Value of c? "))
+    a = float(input("Value of a? "))
+    b = float(input("Value of b? "))
+    c = float(input("Value of c? "))
 
     if a == 0:
         print("Illegal value of a", file=sys.stderr)
@@ -19,10 +18,17 @@ if __name__ == '__main__':
     print("Решим квадратное уравнение ay**2 + by + c = 0")
 
     print("1. Вычислим дискриминант:")
-    D = b ** 2 + 4 * a * c
+    D = b ** 2 - 4 * a * c
     print(f"D = {D}")
 
     print("2. Найдем корни y")
+    if D < 0:
+        y = cmath.fabs(-b / (2 * a))
+        print("3. Решим уравнение x")
+        x1 = cmath.sqrt(y)
+        x2 = - cmath.sqrt(y)
+        print(f"x1 = {x1}\nx2 = {x2}")
+        exit(1)
     if D == 0:
         y = cmath.fabs(-b / (2 * a))
         print(f"y = {y}")
